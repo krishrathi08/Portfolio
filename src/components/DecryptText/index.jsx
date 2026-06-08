@@ -1,32 +1,87 @@
-import { useEffect } from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
+const GLYPHS = "!@#$%^&*()_+~`{}|[]\\:;\"'<>,.?/0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-import { useDencrypt } from "use-dencrypt-effect";
+const getRandomGlyph = () => GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
 
-// const values = ["useDencrypt", "Customizable", "React Hook", "Text Effect"];
-
-const DecryptText = ({
-    values = ['Empty'],
-    delay = 5000
-}) => {
-  const { result, dencrypt } = useDencrypt();
+const DecryptText = ({ values = [] }) => {
+  const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
-    let i = 1;
+    if (!values || values.length === 0) return;
 
-    const action = setInterval(() => {
-      dencrypt(values[i]);
+    let active = true;
+    
+    const runAnimation = async () => {
+      let textIdx = 0;
 
-      i = i === values.length - 1 ? 0 : i + 1;
-    }, delay);
+      while (active) {
+        const currentTarget = values[textIdx];
+        const len = currentTarget.length;
 
-    return () => clearInterval(action);
-  }, []);
+        // --- Phase 1: Appear / Decrypt from Left to Right ---
+        for (let resolvedCount = 0; resolvedCount <= len; resolvedCount++) {
+          if (!active) return;
+          
+          let tempText = '';
+          for (let i = 0; i < len; i++) {
+            if (i < resolvedCount) {
+              tempText += currentTarget[i];
+            } else {
+              tempText += currentTarget[i] === ' ' ? ' ' : getRandomGlyph();
+            }
+          }
+          setDisplayText(tempText);
+          
+          // Wait briefly before resolving the next character
+          await new Promise((resolve) => setTimeout(resolve, 40));
+        }
 
-  return <>{result || values[0]}</>;
+        // --- Phase 2: Fully Resolved Display Pause ---
+        await new Promise((resolve) => setTimeout(resolve, 2500));
+
+        // --- Phase 3: Disappear / Scramble-Erase from Left to Right ---
+        for (let erasedCount = 0; erasedCount <= len; erasedCount++) {
+          if (!active) return;
+
+          let tempText = '';
+          for (let i = 0; i < len; i++) {
+            if (i < erasedCount) {
+              tempText += '\u00A0'; // Non-breaking space to preserve letter spacing
+            } else if (i === erasedCount && i < len) {
+              tempText += currentTarget[i] === ' ' ? ' ' : getRandomGlyph();
+            } else {
+              tempText += currentTarget[i];
+            }
+          }
+          setDisplayText(tempText);
+          
+          // Wait briefly before erasing the next character
+          await new Promise((resolve) => setTimeout(resolve, 30));
+        }
+
+        // --- Phase 4: Brief Pause on Empty State ---
+        setDisplayText('');
+        await new Promise((resolve) => setTimeout(resolve, 400));
+        
+        // Advance index
+        textIdx = (textIdx + 1) % values.length;
+      }
+    };
+
+    runAnimation();
+
+    return () => {
+      active = false;
+    };
+  }, [values]);
+
+  return <>{displayText || '\u00A0'}</>;
 };
 
-DecryptText.propTypes = {}
+DecryptText.propTypes = {
+  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
-export default DecryptText
+export default DecryptText;
