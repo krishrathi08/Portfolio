@@ -4,7 +4,7 @@
 $mk-muneeb-khan-svg-transition: cubic-bezier(0.82, 0.01, 1, 0.11);
 // $mk-muneeb-khan-svg-transition: cubic-bezier(1,-0.01, 0, 1);
 
-.mk-muneeb-khan {
+.mk-krish-rathi {
     // background-color: orange;
     position: relative;
     width: 100%;
@@ -17,7 +17,7 @@ $mk-muneeb-khan-svg-transition: cubic-bezier(0.82, 0.01, 1, 0.11);
     transition: all 1000ms linear;
     // transform: scale(0);
 
-    .mk-muneeb-khan-parallax {
+    .mk-krish-rathi-parallax {
         // display: inline;
         transform: scale(0);
         // width: 100vw;
@@ -100,11 +100,11 @@ $mk-muneeb-khan-svg-transition: cubic-bezier(0.82, 0.01, 1, 0.11);
 }
 
 
-.mk-muneeb-khan-visible {
+.mk-krish-rathi-visible {
     // height: 100vw;
     // transform: scale(1);
 
-    .mk-muneeb-khan-parallax {
+    .mk-krish-rathi-parallax {
         transform: scale(1);
         // transition: all 1s linear;
     }

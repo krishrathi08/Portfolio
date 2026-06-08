@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import K1 from "./muneebkhanSVGs/K1";
-import K2 from "./muneebkhanSVGs/K2";
-import K3 from "./muneebkhanSVGs/K3";
+import K1 from "./krishrathiSVGs/K1";
+import K2 from "./krishrathiSVGs/K2";
+import K3 from "./krishrathiSVGs/K3";
 
 const FONT_FAMILY = "'Permanent Marker', cursive";
 
 const SvgText = ({ char, x, y, rotate, fontSize = "75px", className, ...rest }) => (
-  <div className={`mk-muneeb-khan-parallax ${className}`} {...rest}>
+  <div className={`mk-krish-rathi-parallax ${className}`} {...rest}>
     <svg version="1.2" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
       <text
         x={x}
@@ -27,13 +27,13 @@ const SvgText = ({ char, x, y, rotate, fontSize = "75px", className, ...rest }) 
 const SvgWrapper = ({ SVG, className, ...rest }) => (
   <div
     {...rest}
-    className={`mk-muneeb-khan-parallax ${className}`}
+    className={`mk-krish-rathi-parallax ${className}`}
   >
     <SVG />
   </div>
 );
 
-export default function MuneebKhan({ }) {
+export default function KrishRathi({ }) {
   const ref = useRef();
   const [mount, handleMount] = useState(false);
   
@@ -53,7 +53,7 @@ export default function MuneebKhan({ }) {
   };
 
   return (
-    <div ref={ref} className={`mk-muneeb-khan ${mount ? 'mk-muneeb-khan-visible' : ''}`}>
+    <div ref={ref} className={`mk-krish-rathi ${mount ? 'mk-krish-rathi-visible' : ''}`}>
       {/* First Name: KRISH (K is giant on the left, RISH are at the top) */}
       <SvgText
         className="mk_svg_M"

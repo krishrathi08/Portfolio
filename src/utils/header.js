@@ -17,7 +17,7 @@ const header = {
         onClick: () => openLink('assets/cv.pdf')
     },
     logo: {
-        src: '/assets/photo-logo.png',
+        src: '/assets/photo-logo.jpg',
         alt: 'krishrathi'
     },
     handleIconClick: () => scrollTo('home'),
