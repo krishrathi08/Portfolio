@@ -1,0 +1,105 @@
+@import './theme.scss';
+
+.mk-pre-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+
+    .mk-pre-loader-boarder {
+        background-color: $themeColor1;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .mk-pre-loader-content-wrapper {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .mk-preloader-name-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .mk-preloader-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            color: $themeColor3;
+            letter-spacing: 0.15rem;
+            font-weight: 800;
+            display: flex;
+            user-select: none;
+            margin: 0;
+            
+            @media (max-width: 768px) {
+                font-size: 3.5rem;
+                letter-spacing: 0.1rem;
+            }
+            @media (max-width: 480px) {
+                font-size: 2.6rem;
+                letter-spacing: 0.08rem;
+            }
+
+            .mk-preloader-char {
+                display: inline-block;
+                opacity: 0;
+                transform: translate(var(--tx, 0px), var(--ty, 0px)) rotate(var(--rot, 0deg)) scale(0.6);
+                filter: blur(15px);
+                animation: preloaderGather 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            }
+        }
+
+        .mk-preloader-underline {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            color: $themeColor3;
+            
+            @media (max-width: 480px) {
+                bottom: -6px;
+                height: 8px;
+            }
+
+            path {
+                stroke-dasharray: 450;
+                stroke-dashoffset: 450;
+                animation: drawUnderline 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                animation-delay: 0.8s; // Start drawing while the letters are finalizing their assembly
+            }
+        }
+    }
+}
+
+@keyframes preloaderGather {
+    to {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes drawUnderline {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.mk-pre-loader-enabled {}
+
+.mk-pre-loader-disabled {
+    height: 0;
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(1, -0.6, 0, 1.92);
+    overflow: hidden;
+}
