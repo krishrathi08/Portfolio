@@ -1,25 +1,12 @@
 const mySelf = {
-    heading: 'My Portfolio',
+    heading: 'About Me',
     paragraphs: [
-        `
-        Hello! My name is Krish Rathi, I like creating new things for the internet. From a younger age, I have been interested in programming, as a kid most of my time I've spent in inspect element playing with colors and codes generating loops for sending infinite messages, cracking locked screen overflows and many more. so finally at the age of 16 I decided to convert this passion into career.`,
-        `
-        It is a way to become more crafty with my ideas and explore the endless possibilities in the world of programming.`,
-        `
-        Besides, Programming I'm a passionate photographer and a traveller.
-        A First Pakistani who actually covered most of the 360 google street view of city Karachi with heighest GSV contribution in all over Pakistan it helped more than 42 Million people till now.`,
-        `
-        Coming back to Programming over the time I've delivered projects to many happy cients over globe and it gave me experience for working with many different people of different culture.
-        From local software house to Fiverr, Fiverr to Upwork and gradually towards international companies.`,
-        `
-        I am extremely observant when it comes to the breakdown of certain things. As being a crafty person I mostly endup solving too complex issues in less time.
-        `,
-        `
-        To test my skills to the fullest would be an amazing experience, an environment where I would learn more and polish my skills more further would be an ideal one for me. Because I believe that there is always room to learn something new and to say no to a new opportunity would not be wise at all.
-        Feel free to communicate.`,
-        `
-        Over the time I've specialized in many technologies some of them are...
-        `,
+        `Greetings, I'm Krish Rathi, a passionate Software Engineer and Electronics & Communication Engineering student at IIIT Bhopal. My journey in technology has been driven by a curiosity to build impactful digital products and solve real-world problems through software. Over the years, I have gained hands-on experience in Android, backend, and full-stack development, working on projects ranging from mobile applications to scalable web-based solutions.`,
+        `My primary expertise lies in developing modern applications using technologies such as Kotlin, Java, Android SDK, Jetpack Compose, Firebase, Node.js, Express.js, MongoDB, and various database technologies. I enjoy working across the entire development lifecycle, from designing intuitive user experiences to architecting robust backend systems. This versatility allows me to bridge the gap between frontend and backend development and deliver complete, end-to-end solutions.`,
+        `Throughout my academic and professional journey, I have actively participated in internships, hackathons, technical communities, and software projects that have strengthened both my technical and problem-solving abilities. These experiences have provided me with opportunities to collaborate with talented individuals, work in fast-paced environments, and contribute to products that create meaningful value for users.`,
+        `Beyond development, I have a strong passion for continuous learning and knowledge sharing. Technology evolves rapidly, and I believe that staying curious and adaptable is essential for growth. Whether it is exploring new frameworks, understanding software architecture, learning cloud technologies, or contributing to developer communities, I constantly seek opportunities to expand my skill set.`,
+        `As someone who enjoys building products from concept to deployment, I am particularly interested in mobile development, backend engineering, system design, and full-stack application development. I am motivated by challenges that push me beyond my comfort zone and enable me to create innovative, scalable, and user-centric solutions.`,
+        `I am always open to connecting with like-minded professionals, developers, and organizations that value innovation, collaboration, and continuous growth. My goal is to leverage technology to build products that make a positive impact while continuously evolving as an engineer and problem solver.`,
     ],
     techList1: [
         'JavaScript/TypeScript',

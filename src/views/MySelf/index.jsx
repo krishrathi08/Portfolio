@@ -63,10 +63,7 @@ const MySelf = ({ data: {
                                         text={text}
                                     />
                                 ))}
-                                <ListParent
-                                    list1={techList1}
-                                    list2={techList2}
-                                />
+
                             </div>
                         </div>
                         <div className='col-12 col-md-4 mt-5 mt-md-0'>
