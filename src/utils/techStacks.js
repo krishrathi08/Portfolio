@@ -17,7 +17,7 @@ const techStacks = {
                 { name: 'Flutter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg' },
                 { name: 'Dart', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg' },
                 { name: 'Kotlin', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg' },
-                { name: 'Jetpack Compose', logo: 'https://developer.android.com/static/images/logos/jetpack-compose-icon_2x.png' },
+                { name: 'Jetpack Compose', logo: '/assets/projects/jetpack_compose.png' },
                 { name: 'Android SDK', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg' },
                 { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
                 { name: 'Riverpod', logo: 'https://riverpod.dev/img/logo.svg' }
@@ -42,7 +42,7 @@ const techStacks = {
                 { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
                 { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
                 { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
-                { name: 'Agile', logo: 'https://img.icons8.com/color/96/scrum-org.png' }
+                { name: 'Agile', logo: '/assets/projects/agile.png' }
             ]
         },
         {

@@ -12,7 +12,7 @@ import './styles/side-element.scss'
 import './styles/myself.scss'
 import './styles/graphics.scss'
 import './styles/projects.scss'
-import './styles/maps.scss'
+// Removed maps.scss import
 import './styles/views-title.scss'
 import './styles/hover-image.scss'
 import './styles/window-screen.scss'
@@ -22,7 +22,7 @@ import './styles/contact.scss'
 import './styles/cursor.scss'
 import './styles/krish-rathi.scss'
 import './styles/pre-loader.scss'
-import './styles/certifications.scss'
+// Removed certifications.scss import
 import './styles/contact-drawer.scss'
 
 import App from './App.jsx'

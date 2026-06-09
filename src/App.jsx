@@ -6,7 +6,7 @@ import { ParallaxProvider } from "react-scroll-parallax"
 import Contact from "./views/Contact"
 import FullPageScroll from "./components/FullPageScroll"
 import Header from "./components/Header"
-import MapsContribution from "./views/MapsContribution"
+// Removed MapsContribution
 import MySelf from "./views/MySelf"
 import Outer from "./views/Outer"
 import Projects from "./views/Projects"
@@ -14,12 +14,11 @@ import TechStacks from "./views/TechStacks"
 import SideElements from "./components/SideElements"
 import TopScrolledBar from "./components/TopScrolledBar"
 import Works from "./views/Works"
-import { contact, header, mapsContribution, mySelf, outer, projects, techStacks, works } from "./utils"
+import { contact, header, mySelf, outer, projects, techStacks, works } from "./utils"
 import sideElements from "./utils/sideElements"
 import Cursor from "./components/Cursor"
 import PreLoader from "./components/PreLoader"
-import Certifications from "./views/Certifications"
-import certifications from "./utils/certifications"
+// Removed Certifications
 import WaterMark from "./components/WaterMark"
 import ContactDrawer from "./components/ContactDrawer"
 
@@ -89,13 +88,7 @@ export default function App() {
           <TechStacks data={techStacks} />
         </ViewElement>
 
-        <ViewElement id="certifications">
-          <Certifications data={certifications} />
-        </ViewElement>
-
-        <ViewElement id="contributions">
-          <MapsContribution data={mapsContribution} />
-        </ViewElement>
+        {/* Removed Certifications and Contributions sections */}
 
         <ViewElement id="contact">
           <Contact data={contactData} />
