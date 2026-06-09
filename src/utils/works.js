@@ -23,25 +23,11 @@ const works = {
             techs: ['Event Management', 'Team Leadership', 'Sponsorship & Partnerships', 'Project Coordination', 'Community Building', 'Communication & Operations']
         },
         {
-            image: '/assets/projects/PIAIC.png',
-            label: 'Sep 2018 - Jan 2019',
-            title: 'Teaching Assistant @ PIAIC',
-            description: 'Assisted in teaching cloud computing courses at PIAIC for roughly 4 months. Main courses assigned were Web Development & Cloud Computing.',
-            techs: ['Cloud Computing', 'Web Development', 'JavaScript', 'HTML/CSS']
-        },
-        {
-            image: '/assets/smit.png',
-            label: 'Sep 2018 - Mar 2019',
-            title: 'MERN Developer @ Panacloud',
-            description: "Worked with an efficient development team for almost 8 months. Contributed as one of the base developers of Pakistan's Presidential Initiative Program (PIAIC).",
-            techs: ['MERN Stack', 'React.js', 'Node.js', 'Express.js', 'MongoDB']
-        },
-        {
-            image: '/assets/projects/chainracers.png',
-            label: 'Jul 2018 - Nov 2018',
-            title: 'Junior Developer @ Mantra Solutions',
-            description: 'Worked on hybrid mobile application development using Ionic and Cordova framework to build cross-platform mobile apps.',
-            techs: ['Ionic', 'Cordova', 'Hybrid App', 'JavaScript', 'Mobile Development']
+            image: '/assets/projects/iicpc.png',
+            label: 'October 2024 – August 2025',
+            title: 'Design & Media Team Member @ IICPC (Inter IIIT Competitive Programming Conclave)',
+            description: "As a member of the Design & Media team at IICPC, I was responsible for creating visual assets and digital content that enhanced the event's branding and online presence. I collaborated with organizers and fellow team members to design promotional materials, social media creatives, event banners, and marketing collateral that effectively communicated event information to participants across multiple IIITs. This role allowed me to combine creativity with strategic communication while developing a strong understanding of visual storytelling, brand consistency, and audience engagement.",
+            techs: ['Figma', 'Canva', 'Adobe Photoshop', 'Graphic Design', 'Branding', 'Social Media Design', 'Visual Communication', 'Content Creation']
         }
     ]
 }
