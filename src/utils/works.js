@@ -16,11 +16,11 @@ const works = {
             techs: ['Kotlin', 'Jetpack Compose', 'Android SDK', 'REST APIs', 'OAuth2', 'Biometric Authentication', 'Git', 'Firebase']
         },
         {
-            image: '/assets/projects/rolazdoro.png',
-            label: 'Jan 2019 - May 2020',
-            title: 'Full Stack Developer @ Upwork & Fiverr',
-            description: 'Worked as an independent freelancer on Upwork and Fiverr for over 1.5 years. Delivered multiple projects under fast-paced competitions and diverse tech stacks including Blockchain and JavaScript.',
-            techs: ['React.js', 'JavaScript', 'Node.js', 'Solidity', 'Web3.js']
+            image: '/assets/projects/ecell_iiitb.jpg',
+            label: 'December 2025 – Present',
+            title: 'Coordinator @ E-Cell IIIT Bhopal',
+            description: 'As a Coordinator at E-Cell IIIT Bhopal, I play an active role in organizing and executing large-scale entrepreneurial and campus events. I collaborate with cross-functional teams to manage event operations, coordinate with stakeholders, and ensure seamless execution of initiatives that foster innovation and entrepreneurship among students. My responsibilities include team management, sponsorship outreach, partnership development, and overseeing logistics for flagship events. Through this role, I have strengthened my leadership, communication, and project management skills while contributing to the growth of the entrepreneurial ecosystem within the institute.',
+            techs: ['Event Management', 'Team Leadership', 'Sponsorship & Partnerships', 'Project Coordination', 'Community Building', 'Communication & Operations']
         },
         {
             image: '/assets/projects/PIAIC.png',

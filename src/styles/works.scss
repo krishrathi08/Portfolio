@@ -92,6 +92,23 @@
         display: flex;
         flex-direction: column;
         background-color: white;
+        transition: $allTransitoin3s;
+
+        .mk-taskbar {
+            transition: $allTransitoin3s;
+        }
+
+        &:hover {
+            background-color: white !important;
+            
+            .mk-taskbar {
+                background-color: white !important;
+            }
+
+            .mk-hover-image-filter {
+                opacity: 0 !important;
+            }
+        }
         
         .mk-hover-image {
             display: flex;
@@ -104,13 +121,6 @@
 
             .mk-hover-image-filter {
                 transition: $allTransitoin3s;
-            }
-
-            &:hover {
-                background: white;
-                .mk-hover-image-filter {
-                    opacity: 0 !important;
-                }
             }
         }
         
