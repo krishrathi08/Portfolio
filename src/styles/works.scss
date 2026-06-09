@@ -86,3 +86,40 @@
         }
     }
 }
+
+.mk-works-alt-style {
+    .mk-projects-image-container {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        
+        .mk-hover-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 20px;
+            height: 280px;
+            transition: $allTransitoin3s;
+
+            .mk-hover-image-filter {
+                transition: $allTransitoin3s;
+            }
+
+            &:hover {
+                background: white;
+                .mk-hover-image-filter {
+                    opacity: 0 !important;
+                }
+            }
+        }
+        
+        .mk-image {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 90% !important;
+            max-height: 90% !important;
+            object-fit: contain !important;
+        }
+    }
+}

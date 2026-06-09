@@ -2,18 +2,18 @@ const works = {
     heading: 'My Work Experiences',
     experiences: [
         {
-            image: '/assets/projects/digitalplattform.png',
-            label: 'May 2020 - Present',
-            title: 'Full Stack Developer @ Digital Marknadsplan',
-            description: 'A Swedish based company hired my developers crew where we contributed the major part of our development from React all the way to Node.js, Express, GraphQL, Apollo, and other modern technologies.',
-            techs: ['React', 'Node.js', 'GraphQL', 'Apollo', 'Express']
+            image: '/assets/projects/resonate_fitness.jpg',
+            label: 'March 2026 – Present',
+            title: 'SDE (Flutter) Intern @ Resonate Fitness',
+            description: 'At Resonate Fitness, I contribute to the development of scalable cross-platform mobile applications using Flutter and Dart. My responsibilities include building production-ready UI components, implementing clean architecture with Riverpod for efficient state management, integrating Firebase services, and collaborating closely with backend and design teams to deliver seamless user experiences. I also work on REST API integration, performance optimization, and ensuring application stability for production deployments in an agile development environment.',
+            techs: ['Flutter', 'Dart', 'Riverpod', 'Firebase', 'REST APIs', 'Git', 'Agile Development']
         },
         {
-            image: '/assets/projects/dailycart.png',
-            label: 'Jun 2019 - Jun 2021',
-            title: 'Co-Founder @ Daily Cart',
-            description: 'My first startup where we developed the Daily Cart App. My role was developing the entire technical stack, including the User Mobile App, Vendor App, Rider App, User Web Portal, and Admin Dashboard.',
-            techs: ['React Native', 'React.js', 'Node.js', 'MongoDB', 'AWS']
+            image: '/assets/projects/maya_exchange.jpg',
+            label: 'July 2025 – September 2025',
+            title: 'Android App Developer Intern @ Maya Exchange',
+            description: 'During my internship at Maya Exchange, I contributed to the development and enhancement of Android applications within the crypto-fintech ecosystem. I worked on building and optimizing application features using Kotlin and Jetpack Compose, focusing on delivering smooth user experiences and high-performance interfaces. My responsibilities included integrating real-time cryptocurrency APIs, implementing secure authentication mechanisms such as OAuth2 and biometric authentication, and collaborating with product and backend teams to develop scalable and secure mobile solutions. Through performance optimizations and feature enhancements, I helped improve application responsiveness and overall user experience.',
+            techs: ['Kotlin', 'Jetpack Compose', 'Android SDK', 'REST APIs', 'OAuth2', 'Biometric Authentication', 'Git', 'Firebase']
         },
         {
             image: '/assets/projects/rolazdoro.png',
