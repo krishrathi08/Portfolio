@@ -1,0 +1,105 @@
+@import './theme.scss';
+
+.mk-tech-stacks {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: clip;
+
+    .mk-tech-stacks-container {
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    .mk-tech-stacks-list {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10% 100px 10%;
+        gap: clamp(15px, 2vw, 25px);
+    }
+
+    .mk-tech-strip-info {
+        width: fit-content;
+        line-height: 1.5;
+        padding: 5px 20px 3px 20px;
+        border-radius: $defaultBorder $defaultBorder 0px 0px;
+        font-size: clamp(12px, 1.5vw, 18px);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .mk-tech-strip-items {
+        display: flex;
+        align-items: center;
+        gap: clamp(15px, 2vw, 25px);
+        padding: 15px 20px;
+        width: fit-content;
+        white-space: nowrap;
+        border-radius: 0 $defaultBorder $defaultBorder $defaultBorder;
+        
+        .mk-tech-item-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: $allTransitoin3s;
+
+            &:hover {
+                transform: translateY(-3px);
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+
+            .mk-tech-logo {
+                width: clamp(24px, 3.5vw, 36px);
+                height: clamp(24px, 3.5vw, 36px);
+                object-fit: contain;
+            }
+
+            .mk-tech-name {
+                font-size: clamp(14px, 2vw, 20px);
+                font-weight: 600;
+            }
+        }
+    }
+
+    .mk-tech-color-theme1 {
+        background-color: $themeColor2;
+        color: $themeColor3;
+        
+        .mk-tech-item-card {
+            background-color: rgba(0, 0, 0, 0.05);
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .mk-tech-color-theme2 {
+        background-color: $themeColor2;
+        color: $themeColor4;
+        
+        .mk-tech-item-card {
+            background-color: rgba(0, 0, 0, 0.05);
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .mk-tech-color-theme1-invert {
+        background-color: $themeColor3;
+        color: $themeColor2;
+    }
+
+    .mk-tech-color-theme2-invert {
+        background-color: $themeColor4;
+        color: $themeColor2;
+    }
+}

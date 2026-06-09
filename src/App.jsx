@@ -10,11 +10,11 @@ import MapsContribution from "./views/MapsContribution"
 import MySelf from "./views/MySelf"
 import Outer from "./views/Outer"
 import Projects from "./views/Projects"
-import Reviews from "./views/Reviews"
+import TechStacks from "./views/TechStacks"
 import SideElements from "./components/SideElements"
 import TopScrolledBar from "./components/TopScrolledBar"
 import Works from "./views/Works"
-import { contact, header, mapsContribution, mySelf, outer, projects, reviews, works } from "./utils"
+import { contact, header, mapsContribution, mySelf, outer, projects, techStacks, works } from "./utils"
 import sideElements from "./utils/sideElements"
 import Cursor from "./components/Cursor"
 import PreLoader from "./components/PreLoader"
@@ -85,8 +85,8 @@ export default function App() {
           <Projects data={projects} />
         </ViewElement>
 
-        <ViewElement id="reviews">
-          <Reviews data={reviews} />
+        <ViewElement id="tech-stacks">
+          <TechStacks data={techStacks} />
         </ViewElement>
 
         <ViewElement id="certifications">

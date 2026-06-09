@@ -28,6 +28,13 @@ const works = {
             title: 'Design & Media Team Member @ IICPC (Inter IIIT Competitive Programming Conclave)',
             description: "As a member of the Design & Media team at IICPC, I was responsible for creating visual assets and digital content that enhanced the event's branding and online presence. I collaborated with organizers and fellow team members to design promotional materials, social media creatives, event banners, and marketing collateral that effectively communicated event information to participants across multiple IIITs. This role allowed me to combine creativity with strategic communication while developing a strong understanding of visual storytelling, brand consistency, and audience engagement.",
             techs: ['Figma', 'Canva', 'Adobe Photoshop', 'Graphic Design', 'Branding', 'Social Media Design', 'Visual Communication', 'Content Creation']
+        },
+        {
+            image: '/assets/projects/axios.png',
+            label: 'October 2024 – October 2025',
+            title: 'Graphic Designer @ AXIOS – Development Club, IIIT Bhopal',
+            description: "As a Graphic Designer at AXIOS, the Development Club of IIIT Bhopal, I was responsible for creating visually engaging designs that strengthened the club's identity and enhanced its digital presence. I collaborated with core team members to design promotional campaigns, event creatives, social media content, and branding materials for various technical events and initiatives. Through this role, I developed a strong understanding of visual design principles, brand consistency, audience engagement, and creative storytelling while contributing to the growth and visibility of one of the institute's leading technical communities.",
+            techs: ['Figma', 'Canva', 'Adobe Photoshop', 'Adobe Illustrator', 'Branding', 'Social Media Design', 'Visual Communication', 'Creative Design']
         }
     ]
 }

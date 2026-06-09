@@ -7,7 +7,7 @@ const header = {
         { title: 'About', id: 'my-self' },
         { title: 'Experience', id: 'experience' },
         { title: 'My Work', id: 'my-work' },
-        { title: 'Reviews', id: 'reviews' },
+        { title: 'Tech Stacks', id: 'tech-stacks' },
         { title: 'Certifications', id: 'certifications' },
         { title: 'Contribution', id: 'contributions' },
         { title: 'Contact', id: 'contact' },
