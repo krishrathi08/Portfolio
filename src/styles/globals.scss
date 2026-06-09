@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: 'Quicksand', 'Montserrat', 'Source Code Pro', sans-serif;
 
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: $themeColor1;
   min-width: 350px;
 }
@@ -182,3 +182,7 @@ $variant in $variants {
     background: black;
   }
 } */
+
+.view-element {
+  overflow: visible !important;
+}

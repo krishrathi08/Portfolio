@@ -111,3 +111,327 @@
         }
     }
 }
+
+.mk-projects-stacked {
+    width: 100vw;
+    position: relative;
+    z-index: 2;
+
+    #proj-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .proj-hud {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 110px 80px 10px 80px;
+        color: $themeColor3;
+
+        .phud-l {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            .phud-chap {
+                font-family: var(--fontFamilyMono, monospace);
+                font-size: 0.88rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: $themeColor4;
+            }
+
+            .phud-title {
+                font-family: var(--fontFamilyHeader, sans-serif);
+                font-weight: 800;
+                font-size: 1.1rem;
+                letter-spacing: -0.02em;
+                color: $themeColor3;
+            }
+        }
+
+        .phud-r {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .phud-dots {
+                display: flex;
+                gap: 8px;
+
+                .phud-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 2px solid $themeColor3;
+                    background: none;
+                    transition: background 0.3s, border-color 0.3s, transform 0.3s;
+
+                    &.on {
+                        transform: scale(1.2);
+                        background: currentColor;
+                        border-color: currentColor;
+                    }
+                }
+            }
+
+            .phud-num {
+                font-family: var(--fontFamilyMono, monospace);
+                font-size: 1.15rem;
+                font-weight: bold;
+                letter-spacing: 0.08em;
+                transition: color 0.4s;
+            }
+        }
+    }
+
+    .cards-area {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .pcard {
+        position: absolute;
+        left: 80px;
+        right: 80px;
+        top: 30px;
+        bottom: 50px;
+        border-radius: 24px;
+        border: 3px solid #0d0b1f;
+        box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        color: #0d0b1f;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: radial-gradient(circle, rgba(13, 11, 31, 0.07) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        .cwm {
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+            font-size: 12rem;
+            font-weight: 800;
+            color: rgba(13, 11, 31, 0.04);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .pcl {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+            border-right: 2px dashed rgba(13, 11, 31, 0.15);
+
+            .pc-num {
+                font-family: var(--fontFamilyMono, monospace);
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                opacity: 0.7;
+            }
+
+            .pc-title {
+                font-size: 2.2rem;
+                font-weight: 800;
+                margin: 10px 0 5px 0;
+                line-height: 1.1;
+            }
+
+            .pc-type {
+                font-size: 0.95rem;
+                font-weight: 600;
+                opacity: 0.8;
+                margin-bottom: 15px;
+            }
+
+            .pc-one {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                opacity: 0.9;
+                margin-bottom: 20px;
+            }
+
+            .pc-img-wrap {
+                flex: 1;
+                border-radius: 12px;
+                overflow: hidden;
+                border: 2px solid #0d0b1f;
+                box-shadow: 4px 4px 0 #0d0b1f;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.03);
+                max-height: 220px;
+
+                .pc-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        .pcr {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+
+            .pcr-lbl {
+                font-family: var(--fontFamilyHeader, sans-serif);
+                font-size: 0.85rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 0.12rem;
+                opacity: 0.6;
+                margin-bottom: 10px;
+            }
+
+            .pcr-desc {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .feat-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                .feat-item {
+                    font-family: var(--fontFamilyMono, monospace);
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    padding: 4px 12px;
+                    border-radius: 100px;
+                    border: 2px solid #0d0b1f;
+                    background: rgba(255, 255, 255, 0.25);
+                }
+            }
+        }
+    }
+}
+
+/* RESPONSIVE STACKED CARDS */
+@media (max-width: 1024px) {
+    .mk-projects-stacked {
+        .pcard {
+            left: 40px;
+            right: 40px;
+            top: 20px;
+            bottom: 40px;
+        }
+
+        .pcl, .pcr {
+            padding: 25px;
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .mk-projects-stacked {
+        height: auto !important;
+
+        #proj-sticky {
+            position: relative;
+            height: auto;
+            overflow: visible;
+        }
+
+        .proj-hud {
+            padding: 20px 20px 0 20px;
+
+            .phud-dots, .phud-num {
+                display: none;
+            }
+        }
+
+        .cards-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            overflow: visible;
+        }
+
+        .pcard {
+            position: relative !important;
+            left: auto !important;
+            right: auto !important;
+            top: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+            opacity: 1 !important;
+            grid-template-columns: 1fr;
+            border-radius: 16px;
+            z-index: auto !important;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+
+            .pcl {
+                border-right: none;
+                border-bottom: 2px dashed rgba(13, 11, 31, 0.15);
+                padding: 25px;
+
+                .pc-title {
+                    font-size: 1.8rem;
+                }
+
+                .pc-img-wrap {
+                    height: 180px;
+                    max-height: 180px;
+                }
+            }
+
+            .pcr {
+                padding: 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .mk-projects-stacked {
+        .cards-area {
+            padding: 12px;
+            gap: 15px;
+        }
+
+        .pcard {
+            border-radius: 12px;
+
+            .pcl, .pcr {
+                padding: 18px;
+            }
+
+            .pcl .pc-title {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

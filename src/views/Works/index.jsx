@@ -1,76 +1,90 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import ViewsTitle from '../../components/ViewsTitle'
+import WindowScreen from '../../components/WindowScreen'
+import HoverImage from '../../components/HoverImage'
+import ViewsTitle from '../../components/ViewsTitle';
 
-const TabListItem = ({ text }) => (
-    <div className='mk-works-tab-right-list-item'>{text}</div>
+const WindowImage = ({ src }) => (
+    <HoverImage
+        showFilter
+        imageClassName='mk-image'
+        src={src}
+    />
 )
 
-const Tabs = ({ list }) => {
-    const [selectedItemIndex, handleSelectItemIndex] = useState(0);
-    const seletedItem = list[selectedItemIndex]
+const getSide = (index) => index % 2 ? 'left' : 'right'
+
+const SingleExperience = (props) => {
+    const { image, index } = props
+    const side = getSide(index);
     return (
-        <div>
-            <div className='mk-works-tab'>
-                <div
-                    className='mk-works-left-border'>
-                    <div
-                        style={{
-                            transform: `translateY(${selectedItemIndex * 42}px)`
-                        }} className='mk-works-left-border-selection' />
+        <div className='mk-projects-single'>
+            <div className='row'>
+                <div className='col-6 d-none d-lg-block'>
+                    <div className=''>
+                        <WindowScreen containerClassName={`mk-projects-image-container mk-projects-image-container-${side}`}>
+                            <WindowImage src={image} />
+                        </WindowScreen>
+                    </div>
                 </div>
-                <div className='mk-works-tab-left'>
-                    {(list || []).map((item, i) => (
-                        <div key={i} data-aos="zoom-in-left">
-                            <div onClick={() => handleSelectItemIndex(i)}
-                                className={`mk-works-tab-left-button ${selectedItemIndex === i ? 'mk-works-tab-left-button-selected' : ''}`}
-                            >{item.company}</div>
-                        </div>
-                    ))}
-                </div>
-                <div className='mk-works-tab-right'>
-                    {seletedItem && (
-                        <>
-                            <div
-                                data-aos="zoom-in-right"
-                                className='mk-works-tab-right-title'>
-                                {`${seletedItem.role} @ ${seletedItem.company}`}
-                            </div>
-                            <div
-                                data-aos="zoom-in-right" className='mk-works-tab-right-duration'>{seletedItem.duration}</div>
-                            <div
-                                data-aos="zoom-in-right" className='mk-works-tab-right-list'>
-                                {(seletedItem.points || []).map((text, i) => (
-                                    <TabListItem key={i} text={text} />
-                                ))}
-                            </div>
-                        </>
-                    )}
+                <div className={`col-12 col-lg-6 d-flex align-items-center ${side === 'right' ? 'order-first' : ''}`}>
+                    <ExperienceTextSide {...props} />
                 </div>
             </div>
         </div>
     )
 }
 
+const ExperienceTextSide = (props) => {
+    const { label, title, description, techs, index, image } = props
+    const side = getSide(index);
+    return (
+        <div
+            data-aos={`fade-down-${side}`}
+            className={`mk-projects-text-side mk-projects-text-side-${side}`}>
+            <div
+                data-aos={`zoom-in-${side}`}
+                className='mk-projects-text-featured'>{label}</div>
+            <div
+                data-aos={`zoom-in-${side}`}
+                className='mk-projects-text-title'>{title}</div>
+            <div
+                data-aos={`zoom-in-${side}`}
+                className='mk-projects-text-description'>
+                {description}
+                <div className='mt-4 d-block d-lg-none'>
+                    <WindowScreen containerClassName={`mk-text-image-container`}>
+                        <WindowImage src={image} />
+                    </WindowScreen>
+                </div>
+            </div>
+            <div
+                data-aos={`zoom-in-${side}`}
+                className='mk-projects-text-tecs'>
+                {techs.map((tech, i) => `${tech} ${techs.length - 1 !== i ? ' | ' : ''}`)}
+            </div>
+        </div>
+    )
+}
 
 const Works = ({ data: {
     heading,
-    experiences,
+    experiences
 } }) => {
     return (
-        <div
-            className='mk-works'>
-            <div className='container h100per-min100vh d-flex justify-content-center'>
-                <div
-
-                    data-aos="fade-down-left"
-                    className='mk-works-container'>
-                    <ViewsTitle
-                        text={heading}
-                    />
-                    <Tabs
-                        list={experiences}
-                    />
+        <div className='mk-projects mk-works-alt-style'>
+            <div className='container'>
+                <div className='mk-projects-container'>
+                    <ViewsTitle text={heading} />
+                    <div className='row justify-content-center'>
+                        {(experiences || []).map((exp, i) => (
+                            <SingleExperience
+                                key={i}
+                                index={i}
+                                {...exp}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

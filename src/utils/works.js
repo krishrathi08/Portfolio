@@ -2,67 +2,48 @@ const works = {
     heading: 'My Work Experiences',
     experiences: [
         {
-            company: 'Digital Marknadsplan',
-            role: 'Full Stack Developer',
-            duration: 'Remote-Job | May 2020 - Present',
-            points: [
-                `A Swedish based Company hired my developers crew where we gave the
-    most part of our development from just React till the road of Nodejs,
-    GraphQL, Apollo and many more techs.`,
-            ],
+            image: '/assets/projects/digitalplattform.png',
+            label: 'May 2020 - Present',
+            title: 'Full Stack Developer @ Digital Marknadsplan',
+            description: 'A Swedish based company hired my developers crew where we contributed the major part of our development from React all the way to Node.js, Express, GraphQL, Apollo, and other modern technologies.',
+            techs: ['React', 'Node.js', 'GraphQL', 'Apollo', 'Express']
         },
         {
-            company: 'Daily Cart',
-            role: 'Co Founder',
-            duration: 'Onsite | Jun 2019 - Jun 2021',
-            points: [
-                `My First startup in which we developed Daily Cart App, My Role was
-                developing whole technical side like Web, Mobile Android/IOS, server,
-                And there were many Applications such as User Mobile App, Vendor App,
-                Rider App, User web, Admin Panel, So by hiring one more Developer I
-                made those all things done in one n half year.`,
-            ],
+            image: '/assets/projects/dailycart.png',
+            label: 'Jun 2019 - Jun 2021',
+            title: 'Co-Founder @ Daily Cart',
+            description: 'My first startup where we developed the Daily Cart App. My role was developing the entire technical stack, including the User Mobile App, Vendor App, Rider App, User Web Portal, and Admin Dashboard.',
+            techs: ['React Native', 'React.js', 'Node.js', 'MongoDB', 'AWS']
         },
         {
-            company: 'Upwork & Fiver',
-            role: 'Full Stack Developer',
-            duration: 'Remote | Jan 2019 - May 2020',
-            points: [
-                `Worked as a freelancer on Upwork & Fiver for more than 1.5 year and
-                worked on countless projects every time with new competition and tech
-                including blockchain and Javascript.`,
-            ],
+            image: '/assets/projects/rolazdoro.png',
+            label: 'Jan 2019 - May 2020',
+            title: 'Full Stack Developer @ Upwork & Fiverr',
+            description: 'Worked as an independent freelancer on Upwork and Fiverr for over 1.5 years. Delivered multiple projects under fast-paced competitions and diverse tech stacks including Blockchain and JavaScript.',
+            techs: ['React.js', 'JavaScript', 'Node.js', 'Solidity', 'Web3.js']
         },
         {
-            company: 'PIAIC',
-            role: 'Teaching Assistant',
-            duration: 'Onsite | Sep 2018 - Jan 2019',
-            points: [
-                'Cloud Computing Teacher at PIAIC for 4 months roughly',
-                'Main Courses I was assisting were - Web Development & Cloud Computing',
-
-            ],
+            image: '/assets/projects/PIAIC.png',
+            label: 'Sep 2018 - Jan 2019',
+            title: 'Teaching Assistant @ PIAIC',
+            description: 'Assisted in teaching cloud computing courses at PIAIC for roughly 4 months. Main courses assigned were Web Development & Cloud Computing.',
+            techs: ['Cloud Computing', 'Web Development', 'JavaScript', 'HTML/CSS']
         },
         {
-            company: 'Panacloud',
-            role: 'MERN Developer',
-            duration: 'Onsite | Sep 2018 - Mar 2019',
-            points: [
-                `Worked for almost 8 months with the most efficient team. There I got
-                experience on working on Pakistan’s Presidential Program PIAIC I’m
-                from the base developers of that Program.`,
-            ],
+            image: '/assets/smit.png',
+            label: 'Sep 2018 - Mar 2019',
+            title: 'MERN Developer @ Panacloud',
+            description: "Worked with an efficient development team for almost 8 months. Contributed as one of the base developers of Pakistan's Presidential Initiative Program (PIAIC).",
+            techs: ['MERN Stack', 'React.js', 'Node.js', 'Express.js', 'MongoDB']
         },
         {
-            company: 'Mantra Solutions',
-            role: 'Junior Developer',
-            duration: 'Onsite | Jul 2018 - Nov 2018',
-            points: [
-                `I worked there for almost 5 months as Hybrid Mobile Application
-                Development on Ionic/Cordova`,
-            ],
-        },
+            image: '/assets/projects/chainracers.png',
+            label: 'Jul 2018 - Nov 2018',
+            title: 'Junior Developer @ Mantra Solutions',
+            description: 'Worked on hybrid mobile application development using Ionic and Cordova framework to build cross-platform mobile apps.',
+            techs: ['Ionic', 'Cordova', 'Hybrid App', 'JavaScript', 'Mobile Development']
+        }
     ]
 }
 
-export default works
+export default works;
