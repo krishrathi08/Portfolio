@@ -11,14 +11,14 @@ import MySelf from "./views/MySelf"
 import Outer from "./views/Outer"
 import Projects from "./views/Projects"
 import TechStacks from "./views/TechStacks"
+import Achievements from "./views/Achievements"
 import SideElements from "./components/SideElements"
 import TopScrolledBar from "./components/TopScrolledBar"
 import Works from "./views/Works"
-import { contact, header, mySelf, outer, projects, techStacks, works } from "./utils"
+import { contact, header, mySelf, outer, projects, techStacks, works, achievements } from "./utils"
 import sideElements from "./utils/sideElements"
 import Cursor from "./components/Cursor"
 import PreLoader from "./components/PreLoader"
-// Removed Certifications
 import WaterMark from "./components/WaterMark"
 import ContactDrawer from "./components/ContactDrawer"
 
@@ -88,7 +88,9 @@ export default function App() {
           <TechStacks data={techStacks} />
         </ViewElement>
 
-        {/* Removed Certifications and Contributions sections */}
+        <ViewElement id="achievements">
+          <Achievements data={achievements} />
+        </ViewElement>
 
         <ViewElement id="contact">
           <Contact data={contactData} />

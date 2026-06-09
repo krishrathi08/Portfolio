@@ -4,6 +4,6 @@ export { default as works } from './works';
 export { default as projects } from './projects';
 export { default as techStacks } from './techStacks';
 export { default as graphics } from './graphics';
-export { default as mapsContribution } from './mapsContribution';
 export { default as contact } from './contact';
 export { default as header } from './header';
+export { default as achievements } from './achievements';

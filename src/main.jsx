@@ -23,6 +23,7 @@ import './styles/cursor.scss'
 import './styles/krish-rathi.scss'
 import './styles/pre-loader.scss'
 // Removed certifications.scss import
+import './styles/achievements.scss'
 import './styles/contact-drawer.scss'
 
 import App from './App.jsx'
