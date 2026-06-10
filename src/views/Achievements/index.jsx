@@ -105,38 +105,65 @@ const Achievements = ({ data: { heading, items = [] } }) => {
                                 data-aos="fade-up"
                                 data-aos-delay={i * 80}
                             >
-                                <div className="mk-achievement-card">
-                                    <div className="mk-achievement-card-glow" />
-                                    <div className="mk-achievement-header">
-                                        <div className="mk-achievement-icon-wrapper">
-                                            {getIcon(item.iconName)}
-                                        </div>
-                                        <div className="mk-achievement-meta">
-                                            <span className="mk-achievement-date">{item.date}</span>
-                                            <span className="mk-achievement-tag">{item.category}</span>
-                                        </div>
-                                    </div>
-                                    <div className="mk-achievement-body">
-                                        <h3 className="mk-achievement-title">{item.title}</h3>
-                                        <h4 className="mk-achievement-subtitle">{item.subtitle}</h4>
-                                        <p className="mk-achievement-description">{item.description}</p>
-                                    </div>
-                                    {item.link && item.link !== '#' && (
-                                        <div className="mk-achievement-footer">
-                                            <a 
-                                                href={item.link} 
-                                                target="_blank" 
-                                                rel="noreferrer" 
-                                                className="mk-achievement-link"
-                                            >
-                                                <span>View Credential</span>
-                                                <svg className="mk-link-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                    <line x1="7" y1="17" x2="17" y2="7" />
-                                                    <polyline points="7 7 17 7 17 17" />
+                                <div className="mk-achievement-card-wrapper">
+                                    <div className="mk-achievement-card-inner">
+                                        
+                                        {/* FRONT FACE (Displays headings/meta only) */}
+                                        <div className="mk-achievement-card-front">
+                                            <div className="mk-achievement-card-glow" />
+                                            <div className="mk-achievement-header">
+                                                <div className="mk-achievement-icon-wrapper">
+                                                    {getIcon(item.iconName)}
+                                                </div>
+                                                <div className="mk-achievement-meta">
+                                                    <span className="mk-achievement-date">{item.date}</span>
+                                                    <span className="mk-achievement-tag">{item.category}</span>
+                                                </div>
+                                            </div>
+                                            <div className="mk-achievement-body">
+                                                <h3 className="mk-achievement-title">{item.title}</h3>
+                                                <h4 className="mk-achievement-subtitle">{item.subtitle}</h4>
+                                            </div>
+                                            <div className="mk-achievement-hint">
+                                                <span>Hover to view details</span>
+                                                <svg className="mk-hint-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" />
                                                 </svg>
-                                            </a>
+                                            </div>
                                         </div>
-                                    )}
+
+                                        {/* BACK FACE (Displays description and link) */}
+                                        <div className="mk-achievement-card-back">
+                                            <div className="mk-achievement-card-glow-back" />
+                                            <div className="mk-achievement-body-back">
+                                                <div className="mk-achievement-back-header">
+                                                    <span className="mk-achievement-back-title">{item.title}</span>
+                                                </div>
+                                                <p className="mk-achievement-description">{item.description}</p>
+                                            </div>
+                                            {item.link && item.link !== '#' ? (
+                                                <div className="mk-achievement-footer">
+                                                    <a 
+                                                        href={item.link} 
+                                                        target="_blank" 
+                                                        rel="noreferrer" 
+                                                        className="mk-achievement-link"
+                                                    >
+                                                        <span>View Credential</span>
+                                                        <svg className="mk-link-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                            <line x1="7" y1="17" x2="17" y2="7" />
+                                                            <polyline points="7 7 17 7 17 17" />
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            ) : (
+                                                <div className="mk-achievement-footer-empty">
+                                                    <span>Verified Achievement</span>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         ))}

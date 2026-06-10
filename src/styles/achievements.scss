@@ -22,14 +22,14 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
         margin-top: 20px;
 
         .mk-achievements-filter-pill {
             background-color: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: $themeColor2;
-            padding: 8px 20px;
+            padding: 8px 22px;
             font-size: 14px;
             font-weight: 600;
             border-radius: 30px;
@@ -37,69 +37,76 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
             &:hover {
-                background-color: rgba($themeColor4, 0.1);
-                border-color: $themeColor4;
-                color: $themeColor4;
+                background-color: rgba($themeColor3, 0.1);
+                border-color: $themeColor3;
+                color: $themeColor3;
                 transform: translateY(-2px);
             }
 
             &.active {
-                background-color: $themeColor4;
-                border-color: $themeColor4;
+                background-color: $themeColor3;
+                border-color: $themeColor3;
                 color: $themeColor1;
-                box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+                box-shadow: 0 4px 15px rgba($themeColor3, 0.3);
             }
         }
     }
 
-    /* Achievement Cards */
-    .mk-achievement-card {
+    /* 3D Flip Card Container */
+    .mk-achievement-card-wrapper {
+        perspective: 1200px;
+        width: 100%;
+        height: 310px; /* Standardize height so cards stretch correctly */
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:hover .mk-achievement-card-inner {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .mk-achievement-card-inner {
         position: relative;
         width: 100%;
-        padding: 28px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.07);
+        height: 100%;
+        text-align: left;
+        transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        transform-style: preserve-3d;
+    }
+
+    /* Front and Back common styling */
+    .mk-achievement-card-front,
+    .mk-achievement-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         border-radius: 16px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        padding: 28px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         z-index: 1;
         overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
 
-        /* Glow background effect on hover */
+    /* Front Face Style */
+    .mk-achievement-card-front {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transform: rotateY(0deg);
+        z-index: 2;
+
         .mk-achievement-card-glow {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04), transparent 60%);
             z-index: -1;
-        }
-
-        &:hover {
-            transform: translateY(-8px);
-            border-color: $themeColor4;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-
-            .mk-achievement-card-glow {
-                opacity: 1;
-            }
-
-            .mk-achievement-icon-wrapper {
-                transform: scale(1.1) rotate(6deg);
-                background-color: $themeColor4;
-                color: $themeColor1;
-            }
-
-            .mk-link-arrow {
-                transform: translate(3px, -3px);
-            }
         }
 
         .mk-achievement-header {
@@ -114,12 +121,12 @@
             width: 48px;
             height: 48px;
             border-radius: 12px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: $themeColor4;
+            background-color: rgba($themeColor3, 0.1);
+            color: $themeColor3;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.4s ease;
 
             svg {
                 width: 24px;
@@ -137,7 +144,7 @@
         .mk-achievement-date {
             font-size: 12px;
             font-weight: 700;
-            color: rgba($themeColor2, 0.5);
+            color: rgba($themeColor2, 0.55);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -145,8 +152,8 @@
         .mk-achievement-tag {
             font-size: 10px;
             font-weight: 700;
-            color: $themeColor4;
-            background: rgba($themeColor4, 0.1);
+            color: $themeColor3;
+            background: rgba($themeColor3, 0.1);
             padding: 3px 10px;
             border-radius: 20px;
             text-transform: uppercase;
@@ -166,24 +173,91 @@
 
             .mk-achievement-subtitle {
                 font-size: 13px;
-                font-weight: 500;
-                color: $themeColor4;
-                margin-bottom: 14px;
-                opacity: 0.9;
+                font-weight: 600;
+                color: $themeColor3;
+                opacity: 0.95;
+            }
+        }
+
+        /* Hover indicator hint */
+        .mk-achievement-hint {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba($themeColor2, 0.4);
+            margin-top: 15px;
+
+            .mk-hint-arrow {
+                transition: transform 0.3s ease;
+                stroke: rgba($themeColor2, 0.4);
+            }
+        }
+
+        /* Hover border effect triggers on wrapper hover */
+        .mk-achievement-card-wrapper:hover & {
+            border-color: rgba($themeColor3, 0.6);
+            
+            .mk-achievement-icon-wrapper {
+                transform: scale(1.05);
+                background-color: $themeColor3;
+                color: $themeColor1;
+            }
+        }
+    }
+
+    /* Back Face Style */
+    .mk-achievement-card-back {
+        background: rgba(255, 255, 255, 0.06); /* Slightly more opaque glassmorphism */
+        border: 1px solid rgba($themeColor3, 0.7); /* Glowing border on the back */
+        transform: rotateY(180deg);
+        z-index: 1;
+
+        .mk-achievement-card-glow-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 100%, rgba($themeColor3, 0.1), transparent 70%);
+            z-index: -1;
+        }
+
+        .mk-achievement-body-back {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 12px;
+
+            .mk-achievement-back-header {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding-bottom: 8px;
+            }
+
+            .mk-achievement-back-title {
+                font-size: 14px;
+                font-weight: 700;
+                color: $themeColor3;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
             }
 
             .mk-achievement-description {
                 font-size: 13.5px;
-                color: rgba($themeColor2, 0.7);
+                color: rgba($themeColor2, 0.9); /* Highly visible light text */
                 line-height: 1.6;
                 margin-bottom: 0;
+                font-weight: 500;
             }
         }
 
+        /* Back Footer (Credentials button) */
         .mk-achievement-footer {
-            margin-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 16px;
+            margin-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 14px;
             display: flex;
             align-items: center;
 
@@ -193,7 +267,7 @@
                 gap: 6px;
                 font-size: 13px;
                 font-weight: 600;
-                color: $themeColor4;
+                color: $themeColor3;
                 text-decoration: none;
                 transition: color 0.3s ease;
 
@@ -202,12 +276,31 @@
                 }
 
                 &:hover span {
-                    border-color: $themeColor4;
+                    border-color: $themeColor3;
                 }
 
                 .mk-link-arrow {
                     transition: transform 0.3s ease;
                 }
+            }
+        }
+
+        .mk-achievement-footer-empty {
+            margin-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 14px;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba($themeColor2, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mk-achievement-card-wrapper:hover & {
+            .mk-link-arrow {
+                transform: translate(3px, -3px);
             }
         }
     }
@@ -216,20 +309,34 @@
 /* Light background override when scroll color updates to light palette */
 @media (prefers-color-scheme: light) {
     .mk-achievements {
-        .mk-achievement-card {
+        .mk-achievement-card-front {
             background: rgba(0, 0, 0, 0.02);
             border: 1px solid rgba(0, 0, 0, 0.06);
 
-            &:hover {
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            .mk-achievement-date {
+                color: rgba(0, 0, 0, 0.5);
             }
-            
-            .mk-achievement-icon-wrapper {
-                background-color: rgba(0, 0, 0, 0.03);
+            .mk-achievement-body .mk-achievement-title {
+                color: #222831;
             }
-            
-            .mk-achievement-tag {
-                background: rgba(0, 0, 0, 0.03);
+            .mk-achievement-hint {
+                color: rgba(0, 0, 0, 0.4);
+                .mk-hint-arrow {
+                    stroke: rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+
+        .mk-achievement-card-back {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid $themeColor3;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+            .mk-achievement-body-back .mk-achievement-description {
+                color: #222831;
+            }
+            .mk-achievement-footer-empty {
+                color: rgba(0, 0, 0, 0.4);
             }
         }
         
@@ -237,6 +344,19 @@
             .mk-achievements-filter-pill {
                 background-color: rgba(0, 0, 0, 0.02);
                 border: 1px solid rgba(0, 0, 0, 0.06);
+                color: #222831;
+
+                &:hover {
+                    background-color: rgba($themeColor3, 0.1);
+                    border-color: $themeColor3;
+                    color: $themeColor3;
+                }
+
+                &.active {
+                    background-color: $themeColor3;
+                    border-color: $themeColor3;
+                    color: #fff;
+                }
             }
         }
     }
