@@ -14,13 +14,14 @@ const achievements = {
         },
         {
             id: 2,
-            title: "Global Rank 124 @ Codeforces Round 950",
-            subtitle: "Competitive Programming Milestone",
-            description: "Achieved a personal best rank among 15,000+ global participants. Currently rated Expert (1720+) on Codeforces.",
-            date: "Feb 2025",
-            category: "Coding",
-            iconName: "code",
-            link: "https://codeforces.com"
+            title: "2nd Runner Up – Suprathon Hackathon",
+            subtitle: "National App Development Competition",
+            description: "Secured 2nd Runner Up position among 250+ teams across India in the App Development category at Suprathon Hackathon.\n\nThe competition involved designing and developing innovative software solutions while competing against teams from premier institutes across the country.",
+            date: "APR 2026",
+            category: "Hackathons",
+            iconName: "medal",
+            skills: ["Android Development", "Product Thinking", "Team Collaboration", "Innovation"],
+            link: "#"
         },
         {
             id: 3,
