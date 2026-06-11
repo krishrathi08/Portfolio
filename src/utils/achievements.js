@@ -3,13 +3,14 @@ const achievements = {
     items: [
         {
             id: 1,
-            title: "Winner - Smart India Hackathon 2024",
-            subtitle: "Ministry of Agriculture & Farmers Welfare",
-            description: "Led a team of 6 to develop an AI-powered crop disease detection and recommendation system. Secured 1st place with a cash prize of ₹1 Lakh.",
-            date: "Dec 2024",
-            category: "Hackathons",
-            iconName: "trophy",
-            link: "https://sih.gov.in"
+            title: "Global Rank 33 @ CodeChef Starters 219",
+            subtitle: "CodeChef Competitive Programming",
+            description: "Secured Global Rank 33 in CodeChef Starters 219 Rated Contest by outperforming thousands of competitive programmers worldwide.\n\nAdditionally achieved:\n• 1652 LeetCode Rating\n• 1573 CodeChef Rating\n• Solved 120+ coding problems\n• Earned 13,000+ coding points",
+            date: "APR 2026",
+            category: "Coding",
+            iconName: "code",
+            skills: ["DSA", "Competitive Programming", "Problem Solving", "Algorithms"],
+            link: "#"
         },
         {
             id: 2,

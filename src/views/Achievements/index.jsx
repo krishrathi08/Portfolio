@@ -140,6 +140,13 @@ const Achievements = ({ data: { heading, items = [] } }) => {
                                                     <span className="mk-achievement-back-title">{item.title}</span>
                                                 </div>
                                                 <p className="mk-achievement-description">{item.description}</p>
+                                                {item.skills && item.skills.length > 0 && (
+                                                    <div className="mk-achievement-skills">
+                                                        {item.skills.map((skill, sIdx) => (
+                                                            <span key={sIdx} className="mk-achievement-skill-tag">{skill}</span>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </div>
                                             {item.link && item.link !== '#' ? (
                                                 <div className="mk-achievement-footer">

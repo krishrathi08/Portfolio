@@ -252,6 +252,26 @@
                 line-height: 1.6;
                 margin-bottom: 0;
                 font-weight: 500;
+                white-space: pre-line; /* Support formatting and list spacing */
+            }
+
+            .mk-achievement-skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-top: 10px;
+
+                .mk-achievement-skill-tag {
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: $themeColor3;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
             }
         }
 
@@ -342,6 +362,11 @@
             .mk-achievement-body-back .mk-achievement-description {
                 color: #222831;
                 opacity: 1;
+            }
+            .mk-achievement-body-back .mk-achievement-skills .mk-achievement-skill-tag {
+                color: #222831;
+                background: rgba(0, 0, 0, 0.03);
+                border: 1px solid rgba(0, 0, 0, 0.06);
             }
             .mk-achievement-footer-empty {
                 color: rgba(0, 0, 0, 0.4);
