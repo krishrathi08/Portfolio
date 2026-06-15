@@ -31,6 +31,7 @@ const achievements = {
             date: "MAY 2026",
             category: "Coding",
             iconName: "code",
+            skills: ["DSA", "Algorithms", "Dynamic Programming", "Contest Solving"],
             link: "#"
         },
         {
@@ -41,26 +42,7 @@ const achievements = {
             date: "2023 – PRESENT",
             category: "Academic",
             iconName: "academic",
-            link: "#"
-        },
-        {
-            id: 5,
-            title: "Open Source Contributor @ Flutter",
-            subtitle: "Google Open Source Program",
-            description: "Successfully merged 5+ pull requests in Flutter/packages, improving widget accessibility and performance for millions of developer devices.",
-            date: "Jan 2025",
-            category: "Coding",
-            iconName: "git",
-            link: "https://github.com/flutter/packages"
-        },
-        {
-            id: 6,
-            title: "AXIOS Design Hackathon Winner",
-            subtitle: "IIIT Bhopal Technical Fest",
-            description: "Won the 24-hour design sprint for designing AXIOS's new visual system and brand identity guidelines.",
-            date: "Nov 2024",
-            category: "Design",
-            iconName: "design",
+            skills: ["App Development", "Competitive Programming", "Community Leadership", "ECE B.Tech"],
             link: "#"
         }
     ]
