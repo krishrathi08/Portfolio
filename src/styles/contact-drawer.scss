@@ -7,8 +7,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(2, 6, 12, 0.6);
-    backdrop-filter: blur(4px);
+    background-color: rgba(6, 10, 18, 0.85); /* Darker, more atmospheric overlay */
+    backdrop-filter: blur(8px); /* Premium blur effect */
     z-index: 998;
     opacity: 0;
     pointer-events: none;
@@ -20,40 +20,56 @@
     pointer-events: auto;
 }
 
-/* Contact Drawer Panel */
+/* Contact Modal Panel (Centered Card) */
 .mk-contact-drawer-panel {
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    max-width: 500px;
-    height: 100vh;
-    background-color: #0c1524;
-    border-left: 1px solid #162438;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.92); /* Center and scale down initially */
+    width: calc(100% - 40px);
+    max-width: 550px;
+    height: auto;
+    max-height: 90vh;
+    background-color: #0b1329; /* Matches portfolio's dark base */
+    border: 3px solid $themeColor4; /* Glowing border matching active theme color */
+    border-radius: 24px;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5); /* Portfolio-themed drop shadow */
     z-index: 999;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, border-color 1s ease;
     display: flex;
     flex-direction: column;
-    padding: 60px 40px;
+    padding: 40px 35px;
     overflow-y: auto;
 
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        background-size: 24px 24px;
+        pointer-events: none;
+    }
+
     @media (max-width: 480px) {
-        padding: 40px 20px;
-        max-width: 100%;
+        padding: 30px 20px;
+        width: calc(100% - 24px);
     }
 }
 
 .mk-drawer-open {
-    transform: translateX(0);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
 }
 
-/* Close button */
+/* Close button - Positioned at top-left of the viewport */
 .mk-contact-drawer-close {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: fixed;
+    top: 30px;
+    left: 30px;
     background: none;
     border: none;
     color: #8c9cb2;
@@ -63,25 +79,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
+
+    svg {
+        width: 32px;
+        height: 32px;
+        stroke-width: 1.5px;
+    }
 
     &:hover {
         color: white;
-        transform: rotate(90deg);
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    @media (max-width: 780px) {
+        top: 20px;
+        left: 20px;
     }
 }
 
-/* Card layout matching image */
+/* Flat inner layout */
 .mk-contact-drawer-card {
-    background-color: #0d1b2f;
-    border: 1px solid #162a45;
-    border-radius: 6px;
-    padding: 35px;
-    margin-top: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-
-    @media (max-width: 480px) {
-        padding: 20px 15px;
-    }
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 0;
+    box-shadow: none;
+    z-index: 1;
 }
 
 /* Success state */
@@ -92,14 +116,15 @@
 
     h3 {
         font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 1.8rem;
+        font-weight: 800;
+        font-size: 2rem;
         margin-bottom: 15px;
-        color: #ffd369; // gold
+        color: $themeColor4; /* Dynamic success text color */
+        letter-spacing: -0.02em;
     }
 
     p {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Quicksand', sans-serif;
         font-size: 0.95rem;
         line-height: 1.6;
         color: #a0aec0;
@@ -107,7 +132,23 @@
     }
 
     .mk-button {
-        padding: 10px 25px;
+        padding: 12px 30px;
+        border-radius: 100px;
+        border: 2px solid $themeColor4;
+        color: $themeColor4;
+        cursor: pointer;
+        background: transparent;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: $themeColor4;
+            color: #0b1329;
+            transform: scale(1.05);
+        }
     }
 }
 
@@ -115,7 +156,7 @@
 .mk-contact-form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 
     .mk-form-group {
         display: flex;
@@ -123,25 +164,26 @@
 
         label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 800;
             color: #d1dbe5;
-            letter-spacing: 0.08rem;
+            letter-spacing: 0.12rem;
             margin-bottom: 8px;
             text-align: left;
             user-select: none;
+            opacity: 0.7;
         }
 
         input, textarea {
-            background-color: #07111e;
-            border: 1px solid #162a45;
-            border-radius: 4px;
-            padding: 15px 20px;
+            background-color: rgba(7, 17, 30, 0.55);
+            border: 2px solid rgba(22, 42, 69, 0.5);
+            border-radius: 10px;
+            padding: 14px 18px;
             color: #f7fafc;
             font-family: 'Quicksand', sans-serif;
             font-size: 15px;
             outline: none;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 
             &::placeholder {
                 color: #43546b;
@@ -150,8 +192,9 @@
             }
 
             &:focus {
-                border-color: #ffd369;
-                box-shadow: 0 0 5px rgba(255, 211, 105, 0.2);
+                border-color: $themeColor4;
+                background-color: rgba(7, 17, 30, 0.9);
+                box-shadow: 0 0 10px var(--themeColor4);
             }
 
             &:disabled {
@@ -161,32 +204,44 @@
         }
 
         textarea {
-            resize: vertical;
-            min-height: 120px;
+            resize: none;
+            min-height: 140px;
         }
     }
 
-    /* Submit Button matching image */
+    /* Submit Button */
     .mk-form-submit-btn {
         background-color: transparent;
-        border: 1px solid #162a45;
-        border-radius: 4px;
-        padding: 16px;
-        color: #f7fafc;
+        border: 2px solid $themeColor4;
+        border-radius: 100px;
+        padding: 15px;
+        color: $themeColor4;
         font-family: 'Montserrat', sans-serif;
         font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.1rem;
+        font-weight: 800;
+        letter-spacing: 0.12rem;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+
+        svg {
+            margin-left: 8px;
+            transition: transform 0.2s;
+        }
 
         &:hover:not(:disabled) {
-            background-color: #ffd369;
-            color: #0d1b2f;
-            border-color: #ffd369;
+            background-color: $themeColor4;
+            color: #0b1329;
+            border-color: $themeColor4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--themeColor4);
+
+            svg {
+                transform: translate(3px, -3px);
+            }
         }
 
         &:disabled {
@@ -201,5 +256,6 @@
         margin: 0;
         text-align: center;
         font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
     }
 }

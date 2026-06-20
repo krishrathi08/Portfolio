@@ -93,26 +93,6 @@ const projects = {
             ],
             link: 'https://github.com/krishrathi08/Bank_Transaction_System',
             whyItMatters: 'Ledger Bank addresses the visibility and trust gaps of standard personal finance platforms. By packing database-enforced double-entry safety, visual history audit filters, and multi-factor transaction authorization into an engaging desktop dashboard, it makes managing personal money movement secure, transparent, and accessible.'
-        },
-        {
-            image: '/assets/projects/rolazdoro.png',
-            label: 'Featured Project',
-            title: `Rolaz D'oro`,
-            description: `One of the main objective of Rolaz D'ORO is to make gold easily accessible to even small investors in a trusted and secure environment, with the peace of mind that their investments are traceable and could be claimed at any stated time.`,
-            techs: [
-                'React Js',
-                'Web3 Js',
-            ]
-        },
-        {
-            image: '/assets/projects/chainracers.png',
-            label: 'Featured Project',
-            title: `Chainracers`,
-            description: `ChainRacers is a play-to-earn NFT Race Battle Game. The GammaVerse, our growing MetaVerse featuring characters, worlds, arenas, and more, will kick things off with 8,888 unique generative NFT sets. Each set will include a NFT Racer and NFT Rider.`,
-            techs: [
-                'React Js',
-                'Web3 Js',
-            ]
         }
     ]
 }
