@@ -72,7 +72,9 @@ const projects = {
             label: 'Featured Project',
             title: 'Ledger Bank – Digital Transaction Console',
             bgColor: '#C3B1FF',
-            accentColor: '#8B68D4',
+            accentColor: '#7b60f4',
+            imageFit: 'contain',
+            imagePosition: 'center',
             description: 'Ledger Bank is a high-polish, full-stack digital banking workspace designed to manage retail accounts, manual transfers, automated payment schedules, and administrative controls. The application combines a premium, glassmorphic cybersecurity-themed dashboard with deep transactional audit trails and advanced verification layers, making everyday financial operations highly secure, visible, and responsive.',
             whatItDoes: 'The mission of Ledger Bank is to secure and simplify digital wealth management by providing users with reliable transaction execution, real-time risk monitoring, and automated recurring payment rails. By leveraging a double-entry ledger database architecture, real-time email verification codes, and robust security middleware, Ledger Bank ensures absolute financial integrity, threat mitigation, and a premium user experience.',
             features: [
