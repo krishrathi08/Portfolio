@@ -34,11 +34,19 @@ const TechStrip = ({ category, items, index }) => {
     const [endScroll, setEndScroll] = useState(0)
     
     useEffect(() => {
+        const handleScroll = () => {
+            setPositions();
+            window.removeEventListener("scroll", handleScroll);
+        };
+        window.addEventListener("scroll", handleScroll);
         window.addEventListener("resize", setPositions);
         setTimeout(() => {
-            setPositions()
-        }, 1000);
-        return () => window.removeEventListener("resize", setPositions);
+            setPositions();
+        }, 4500);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", setPositions);
+        };
     }, [])
     
     const setPositions = () => {

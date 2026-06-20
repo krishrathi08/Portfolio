@@ -43,10 +43,19 @@ const Text = ({ text, index, clinet, via }) => {
     const [startScroll, setStartScroll] = useState(0)
     const [endScroll, setEndScroll] = useState(0)
     useEffect(() => {
+        const handleScroll = () => {
+            setPositions();
+            window.removeEventListener("scroll", handleScroll);
+        };
+        window.addEventListener("scroll", handleScroll);
         window.addEventListener("resize", setPositions);
         setTimeout(() => {
-            setPositions()
-        }, 3000);
+            setPositions();
+        }, 4500);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", setPositions);
+        };
     }, [])
     
     const setPositions = () => {
