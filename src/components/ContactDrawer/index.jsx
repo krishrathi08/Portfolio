@@ -98,12 +98,13 @@ export default function ContactDrawer({ isOpen, onClose }) {
         onClick={onClose}
       />
 
+      {/* Viewport Close Button (rendered outside transform panel to preserve fixed positioning) */}
+      <button className={`mk-contact-drawer-close ${isOpen ? 'visible' : ''}`} onClick={onClose}>
+        <CloseIcon />
+      </button>
+
       {/* Drawer Panel */}
       <div className={`mk-contact-drawer-panel ${isOpen ? 'mk-drawer-open' : ''}`}>
-        <button className="mk-contact-drawer-close" onClick={onClose}>
-          <CloseIcon />
-        </button>
-
         <div className="mk-contact-drawer-card">
           {status === 'success' ? (
             <div className="mk-contact-success-state">
@@ -121,7 +122,7 @@ export default function ContactDrawer({ isOpen, onClose }) {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Narendra Modi"
+                  placeholder="Enter your name"
                   required
                   disabled={status === 'submitting'}
                 />
@@ -135,7 +136,7 @@ export default function ContactDrawer({ isOpen, onClose }) {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="xyz@gmail.com"
+                  placeholder="your.email@example.com"
                   required
                   disabled={status === 'submitting'}
                 />
@@ -148,7 +149,7 @@ export default function ContactDrawer({ isOpen, onClose }) {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="What's on your mind?"
+                  placeholder="Write your message here..."
                   rows="6"
                   required
                   disabled={status === 'submitting'}

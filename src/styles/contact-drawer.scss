@@ -74,12 +74,19 @@
     border: none;
     color: #8c9cb2;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
     svg {
         width: 32px;
