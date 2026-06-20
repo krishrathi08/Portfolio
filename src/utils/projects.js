@@ -30,26 +30,69 @@ const projects = {
             whyItMatters: 'GoodDeed empowers local communities by turning volunteering into an interactive and rewarding experience. By simplifying the management overhead for organizations, it helps them focus on making a real difference.'
         },
         {
-            image: '/assets/projects/digitalplattform.png',
+            image: '/assets/projects/vaidya.png',
             label: 'Featured Project',
-            title: 'Digital Plattform',
-            description: 'A Platform that offers everything from marketing strategy and solving technical challenges to content creation for social media',
+            title: 'Vaidya – Smart Health Manager',
+            description: 'Vaidya is an AI-powered healthcare management platform designed to help patients, caregivers, and healthcare professionals manage medicines, appointments, and emergency situations through a unified digital experience. The application combines intelligent health assistance, medication tracking, emergency response features, and digital patient records to make healthcare more accessible, organized, and proactive.',
+            whatItDoes: 'The mission of Vaidya is to simplify healthcare management by providing users with smart medicine reminders, AI-powered health guidance, emergency assistance, and secure access to patient records. By leveraging modern mobile technologies and artificial intelligence, Vaidya helps users stay consistent with treatments, make informed health decisions, and access critical medical information whenever needed.',
+            features: [
+                'AI Health Assistant powered by Gemini/OpenAI',
+                'Smart Medicine Reminders & Dose Tracking',
+                'Refill & Medication Management',
+                'Appointment Tracking Dashboard',
+                'One-Tap Emergency SOS System',
+                'Digital Patient Profile with Secure Patient ID',
+                'Role-Based Patient & Doctor Experience',
+                'Cloud-Synced Healthcare Records',
+                'Voice-Assisted & Elderly-Friendly Interface'
+            ],
             techs: [
-                'React Js',
-                'Express Js',
-                'GraphQl/Apollo',
-                'Mongodb',
-            ]
+                'Flutter',
+                'Dart',
+                'Firebase Auth',
+                'Cloud Firestore',
+                'GetX',
+                'Gemini API',
+                'OpenAI API',
+                'Local Notifications',
+                'SharedPreferences',
+                'Lottie'
+            ],
+            link: 'https://github.com/krishrathi08/Vaidya-App',
+            whyItMatters: 'Vaidya addresses the fragmentation of personal healthcare management. By packing critical clinical tracking tools, smart AI guidance, and one-tap emergency services into an elderly-friendly interface, it makes managing personal health accessible to everyone.'
         },
         {
-            image: '/assets/projects/declinica.png',
+            image: '/assets/projects/ledger_bank.png',
             label: 'Featured Project',
-            title: 'Declinica',
-            description: 'A Decentralised blockchain Designed for the medical community.',
+            title: 'Ledger Bank – Digital Transaction Console',
+            description: 'Ledger Bank is a high-polish, full-stack digital banking workspace designed to manage retail accounts, manual transfers, automated payment schedules, and administrative controls. The application combines a premium, glassmorphic cybersecurity-themed dashboard with deep transactional audit trails and advanced verification layers, making everyday financial operations highly secure, visible, and responsive.',
+            whatItDoes: 'The mission of Ledger Bank is to secure and simplify digital wealth management by providing users with reliable transaction execution, real-time risk monitoring, and automated recurring payment rails. By leveraging a double-entry ledger database architecture, real-time email verification codes, and robust security middleware, Ledger Bank ensures absolute financial integrity, threat mitigation, and a premium user experience.',
+            features: [
+                'Double-Entry Ledger Database ensuring 100% financial transaction write accuracy.',
+                'Glassmorphic Cyber-HUD Dashboard running at a hardware-accelerated 60 FPS.',
+                '6-Digit Email OTP Verification securing manual transfer operations.',
+                'Collapsible Timeline Audit Filters searching history by date and amount ranges.',
+                'Dynamic PDF Passbook Generator streaming custom styled bank statements on-the-fly.',
+                'Automated Recurring Payments managing scheduled weekly/monthly transaction queues.',
+                'Brute-Force Rate Limiting Middleware shielding critical auth and payment endpoints.',
+                'Role-Based Onboarding Dashboard separating Customer, Admin, and Operator panels.'
+            ],
             techs: [
-                'React Js',
-                'Web3 Js',
-            ]
+                'React.js',
+                'Node.js',
+                'Express.js',
+                'MongoDB Atlas',
+                'Mongoose',
+                'Vanilla CSS',
+                'Nodemailer',
+                'PDFKit',
+                'Google OAuth',
+                'Vite',
+                'Render',
+                'Vercel'
+            ],
+            link: 'https://github.com/krishrathi08/Bank_Transaction_System',
+            whyItMatters: 'Ledger Bank addresses the visibility and trust gaps of standard personal finance platforms. By packing database-enforced double-entry safety, visual history audit filters, and multi-factor transaction authorization into an engaging desktop dashboard, it makes managing personal money movement secure, transparent, and accessible.'
         },
         {
             image: '/assets/projects/rolazdoro.png',
