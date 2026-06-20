@@ -64,9 +64,11 @@ function Cursor() {
         ]}
         outerStyle={{
           border: '1px solid var(--themeColor4)',
+          zIndex: 10000
         }}
         innerStyle={{
-          backgroundColor: 'var(--themeColor4)'
+          backgroundColor: 'var(--themeColor4)',
+          zIndex: 10000
         }}
       />
     </div>
