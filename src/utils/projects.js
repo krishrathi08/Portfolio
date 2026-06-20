@@ -26,7 +26,7 @@ const projects = {
                 'Google Maps API',
                 'MVVM'
             ],
-            link: '#',
+            link: 'https://github.com/krishrathi08/GoodDeedApp',
             whyItMatters: 'GoodDeed empowers local communities by turning volunteering into an interactive and rewarding experience. By simplifying the management overhead for organizations, it helps them focus on making a real difference.'
         },
         {
