@@ -37,7 +37,7 @@ const projects = {
             image: '/assets/projects/vaidya.png',
             label: 'Featured Project',
             title: 'Vaidya – Smart Health Manager',
-            bgColor: '#d6ffcd',
+            bgColor: '#FF8AB0',
             accentColor: '#005014',
             imageFit: 'cover',
             imagePosition: 'center',
