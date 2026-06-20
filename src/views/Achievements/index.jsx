@@ -69,36 +69,15 @@ const getIcon = (name) => {
 };
 
 const Achievements = ({ data: { heading, items = [] } }) => {
-    const [selectedCategory, setSelectedCategory] = useState('All');
-
-    const categories = ['All', 'Hackathons', 'Coding', 'Academic', 'Design'];
-
-    const filteredItems = selectedCategory === 'All' 
-        ? items 
-        : items.filter(item => item.category === selectedCategory);
-
     return (
         <div className="mk-achievements">
             <div className="container">
                 <div className="mk-achievements-container">
                     <ViewsTitle text={heading} />
 
-                    {/* Filter Pills */}
-                    <div className="mk-achievements-filters" data-aos="fade-up">
-                        {categories.map((cat, i) => (
-                            <button
-                                key={i}
-                                className={`mk-achievements-filter-pill ${selectedCategory === cat ? 'active' : ''}`}
-                                onClick={() => setSelectedCategory(cat)}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-
                     {/* Achievements Grid */}
                     <div className="row g-4 justify-content-center mt-2">
-                        {filteredItems.map((item, i) => (
+                        {items.map((item, i) => (
                             <div 
                                 key={item.id} 
                                 className="col-12 col-md-6 d-flex align-items-stretch"

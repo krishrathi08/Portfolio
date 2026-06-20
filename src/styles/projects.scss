@@ -130,7 +130,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 110px 80px 10px 80px;
+        padding: 70px 80px 5px 80px; /* Reduced padding to maximize card height */
         color: $themeColor3;
 
         .phud-l {
@@ -141,8 +141,9 @@
 
             .phud-chap {
                 font-family: var(--fontFamilyMono, monospace);
-                font-size: 0.88rem;
-                letter-spacing: 0.2em;
+                font-size: 1.35rem; /* Increased size significantly */
+                font-weight: 800;
+                letter-spacing: 0.15em;
                 text-transform: uppercase;
                 color: $themeColor4;
             }
@@ -150,7 +151,7 @@
             .phud-title {
                 font-family: var(--fontFamilyHeader, sans-serif);
                 font-weight: 800;
-                font-size: 1.1rem;
+                font-size: 1.45rem; /* Increased title size */
                 letter-spacing: -0.02em;
                 color: $themeColor3;
             }
@@ -200,10 +201,14 @@
 
     .pcard {
         position: absolute;
-        left: 80px;
-        right: 80px;
-        top: 30px;
-        bottom: 50px;
+        left: 50%;
+        transform: translate3d(-50%, 108vh, 0); /* Center card horizontally, start hidden vertically */
+        width: calc(100% - 60px);
+        max-width: 950px; /* Constrained width to make card shape look squarish and large */
+        top: 15px; /* Maximize vertical height */
+        bottom: 25px; /* Maximize vertical height */
+        height: calc(100% - 40px); /* Fit within cards area */
+        aspect-ratio: 1 / 1; /* Perfect square shape on desktops/laptops */
         border-radius: 24px;
         border: 3px solid #0d0b1f;
         box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.4);
@@ -235,11 +240,12 @@
         }
 
         .pcl {
-            padding: 40px;
+            padding: 25px 30px; /* Optimized padding to prevent vertical text overlap and increase space */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             z-index: 1;
+            min-height: 0; /* Override default grid item min-height so it respects row height and allows inner scrolling */
             border-right: 2px dashed rgba(13, 11, 31, 0.15);
 
             .pc-num {
@@ -281,7 +287,7 @@
                 align-items: center;
                 justify-content: center;
                 background: rgba(0, 0, 0, 0.03);
-                max-height: 220px;
+                max-height: 260px; /* Increased image height to match larger square cards */
 
                 .pc-img {
                     width: 100%;
@@ -297,11 +303,12 @@
         }
 
         .pcr {
-            padding: 40px;
+            padding: 25px 30px; /* Optimized padding to prevent content clipping and increase space */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             z-index: 1;
+            min-height: 0; /* Override default grid item min-height so it respects row height and allows inner scrolling */
 
             .pcr-lbl {
                 font-family: var(--fontFamilyHeader, sans-serif);
@@ -341,15 +348,8 @@
 /* RESPONSIVE STACKED CARDS */
 @media (max-width: 1024px) {
     .mk-projects-stacked {
-        .pcard {
-            left: 40px;
-            right: 40px;
-            top: 20px;
-            bottom: 40px;
-        }
-
         .pcl, .pcr {
-            padding: 25px;
+            padding: 20px;
         }
     }
 }
@@ -392,6 +392,9 @@
             border-radius: 16px;
             z-index: auto !important;
             box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+            aspect-ratio: auto !important;
+            width: 100% !important;
+            height: auto !important;
 
             .pcl {
                 border-right: none;

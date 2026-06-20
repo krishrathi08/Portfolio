@@ -2,14 +2,29 @@ const projects = {
     heading: `Things I've Worked on`,
     list: [
         {
-            image: '/assets/projects/PIAIC.png',
+            image: '/assets/projects/gooddeed.png',
             label: 'Featured Project',
-            title: 'PIAIC Web/Portal',
-            description: 'The mission of PIAIC is to reshape Pakistan by revolutionizing education, research, and business by adopting latest, cutting-edge technologies.',
+            title: 'GoodDeed – Community Volunteering Platform',
+            description: 'GoodDeed is a full-stack Android application that bridges the gap between volunteers and organizations by creating a unified platform for social impact initiatives. The application enables organizations to create and manage community events while allowing volunteers to discover opportunities, register for activities, track contributions, and earn recognition through a gamified engagement system.',
+            whatItDoes: 'The mission of GoodDeed is to encourage social responsibility by connecting individuals with organizations that are working toward meaningful causes. The platform simplifies volunteer management, event participation, community engagement, and impact tracking through an intuitive mobile experience.',
+            features: [
+                'Role-Based Authentication (Volunteer & Organization)',
+                'Event Creation & Management',
+                'Community Feed with CRUD Operations',
+                'Real-Time Notifications',
+                'Google Maps Integration',
+                'Volunteer Participation Tracking',
+                'Badge & Achievement System',
+                'Image Upload & Management'
+            ],
             techs: [
-                'React Js',
-                'Express Js',
-                'Mongodb',
+                'Kotlin',
+                'Jetpack Compose',
+                'Firebase',
+                'Cloud Firestore',
+                'Firebase Storage',
+                'Google Maps API',
+                'MVVM'
             ]
         },
         {
