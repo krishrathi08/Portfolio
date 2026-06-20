@@ -25,7 +25,9 @@ const projects = {
                 'Firebase Storage',
                 'Google Maps API',
                 'MVVM'
-            ]
+            ],
+            link: '#',
+            whyItMatters: 'GoodDeed empowers local communities by turning volunteering into an interactive and rewarding experience. By simplifying the management overhead for organizations, it helps them focus on making a real difference.'
         },
         {
             image: '/assets/projects/digitalplattform.png',

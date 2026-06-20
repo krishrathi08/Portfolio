@@ -201,14 +201,14 @@
 
     .pcard {
         position: absolute;
-        left: 50%;
-        transform: translate3d(-50%, 108vh, 0); /* Center card horizontally, start hidden vertically */
-        width: calc(100% - 60px);
-        max-width: 950px; /* Constrained width to make card shape look squarish and large */
-        top: 15px; /* Maximize vertical height */
-        bottom: 25px; /* Maximize vertical height */
-        height: calc(100% - 40px); /* Fit within cards area */
-        aspect-ratio: 1 / 1; /* Perfect square shape on desktops/laptops */
+        left: 0;
+        right: 0;
+        margin: 0 auto; /* Horizontally center card without using transform */
+        width: calc(100% - 80px); /* Cover almost the whole screen width */
+        max-width: 1450px; /* Large maximum width for big screens */
+        top: 10px; /* Maximize vertical height */
+        bottom: 15px; /* Maximize vertical height */
+        height: calc(100% - 25px); /* Fit within cards area */
         border-radius: 24px;
         border: 3px solid #0d0b1f;
         box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.4);
@@ -264,9 +264,17 @@
             }
 
             .pc-type {
-                font-size: 0.95rem;
-                font-weight: 600;
-                opacity: 0.8;
+                display: inline-block;
+                width: fit-content;
+                font-family: var(--fontFamilyMono, monospace);
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                padding: 4px 10px;
+                border-radius: 100px;
+                border: 2px solid #0d0b1f;
+                background: rgba(255, 255, 255, 0.2);
                 margin-bottom: 15px;
             }
 
@@ -287,16 +295,50 @@
                 align-items: center;
                 justify-content: center;
                 background: rgba(0, 0, 0, 0.03);
-                max-height: 260px; /* Increased image height to match larger square cards */
+                max-height: 350px; /* Increased image height to match larger cards */
 
                 .pc-img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    object-position: top; /* Align to top to show website header */
                     transition: transform 0.3s;
 
                     &:hover {
                         transform: scale(1.05);
+                    }
+                }
+            }
+
+            .pc-link-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                width: fit-content;
+                font-family: var(--fontFamilyHeader, sans-serif);
+                font-size: 0.9rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                padding: 10px 20px;
+                border-radius: 100px;
+                border: 2px solid #0d0b1f;
+                background: #0d0b1f;
+                color: #ffffff;
+                transition: transform 0.2s, background-color 0.2s, color 0.2s;
+                margin-top: 15px;
+
+                .arrow {
+                    transition: transform 0.2s;
+                }
+
+                &:hover {
+                    background: transparent;
+                    color: #0d0b1f;
+                    transform: translateY(-2px);
+
+                    .arrow {
+                        transform: translateX(4px);
                     }
                 }
             }
@@ -309,6 +351,20 @@
             justify-content: space-between;
             z-index: 1;
             min-height: 0; /* Override default grid item min-height so it respects row height and allows inner scrolling */
+
+            .pc-why-matters {
+                border: 2px solid rgba(13, 11, 31, 0.25);
+                border-radius: 12px;
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                background: rgba(255, 255, 255, 0.15);
+                margin-top: 15px;
+
+                strong {
+                    font-weight: 800;
+                }
+            }
 
             .pcr-lbl {
                 font-family: var(--fontFamilyHeader, sans-serif);

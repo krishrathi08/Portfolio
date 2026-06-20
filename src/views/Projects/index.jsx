@@ -50,7 +50,7 @@ const Projects = ({ data: { heading, list } }) => {
                 const end = start + CARD_ANIM;
 
                 if (scrolled < start) {
-                    card.style.transform = 'translate3d(-50%, 108vh, 0) rotate(6deg) scale(0.88)';
+                    card.style.transform = 'translate3d(0, 108vh, 0) rotate(6deg) scale(0.88)';
                     card.style.opacity = '0';
                     card.style.zIndex = String(i + 1);
                 } else {
@@ -66,13 +66,13 @@ const Projects = ({ data: { heading, list } }) => {
                         const e = 1 - Math.pow(1 - (scrolled - start) / CARD_ANIM, 3);
                         const rot = (1 - e) * 6;
                         const tx = (1 - e) * 18;
-                        card.style.transform = `translate3d(calc(-50% + ${tx}px), ${(1 - e) * 108}vh, 0) rotate(${rot}deg) scale(${0.88 + e * 0.12})`;
+                        card.style.transform = `translate3d(${tx}px, ${(1 - e) * 108}vh, 0) rotate(${rot}deg) scale(${0.88 + e * 0.12})`;
                         card.style.opacity = String(0.3 + e * 0.7);
                     } else {
                         const nudgeY = -cardsAbove * 54;
                         const nudgeRot = cardsAbove * 0.6;
                         const sc = Math.max(0.91, 1 - cardsAbove * 0.016);
-                        card.style.transform = `translate3d(-50%, ${nudgeY}px, 0) rotate(${nudgeRot}deg) scale(${sc})`;
+                        card.style.transform = `translate3d(0, ${nudgeY}px, 0) rotate(${nudgeRot}deg) scale(${sc})`;
                         card.style.opacity = '1';
                     }
                     card.style.zIndex = String(i + 1);
@@ -162,6 +162,11 @@ const Projects = ({ data: { heading, list } }) => {
                                 <div className="pc-img-wrap">
                                     <img src={project.image} alt={project.title} className="pc-img" loading="lazy" />
                                 </div>
+                                {project.link && (
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="pc-link-btn">
+                                        View Project <span className="arrow">→</span>
+                                    </a>
+                                )}
                             </div>
                             <div className="pcr" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                 <div style={{ overflowY: 'auto', flex: 1, paddingRight: '5px', marginBottom: '15px' }}>
@@ -177,6 +182,12 @@ const Projects = ({ data: { heading, list } }) => {
                                                 ))}
                                             </ul>
                                         </>
+                                    )}
+
+                                    {project.whyItMatters && (
+                                        <div className="pc-why-matters">
+                                            <strong>Why it matters:</strong> {project.whyItMatters}
+                                        </div>
                                     )}
                                 </div>
                                 <div style={{ marginTop: 'auto' }}>
