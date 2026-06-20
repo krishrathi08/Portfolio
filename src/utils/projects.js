@@ -6,7 +6,9 @@ const projects = {
             label: 'Featured Project',
             title: 'GoodDeed – Community Volunteering Platform',
             bgColor: '#FFE566',
-            accentColor: '#D4B200',
+            accentColor: '#3b82f6',
+            imageFit: 'contain',
+            imagePosition: 'center',
             description: 'GoodDeed is a full-stack Android application that bridges the gap between volunteers and organizations by creating a unified platform for social impact initiatives. The application enables organizations to create and manage community events while allowing volunteers to discover opportunities, register for activities, track contributions, and earn recognition through a gamified engagement system.',
             whatItDoes: 'The mission of GoodDeed is to encourage social responsibility by connecting individuals with organizations that are working toward meaningful causes. The platform simplifies volunteer management, event participation, community engagement, and impact tracking through an intuitive mobile experience.',
             features: [
