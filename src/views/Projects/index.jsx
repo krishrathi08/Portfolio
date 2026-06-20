@@ -35,7 +35,7 @@ const Projects = ({ data: { heading, list } }) => {
                     });
                     if (hudNum) {
                         hudNum.textContent = LBLS[0];
-                        hudNum.style.color = accents[0];
+                        hudNum.style.color = list[0]?.accentColor || accents[0];
                     }
                     hudDots.forEach((d, i) => d.classList.toggle('on', i === 0));
                 }
@@ -91,7 +91,7 @@ const Projects = ({ data: { heading, list } }) => {
                     hudNum.style.transform = 'translateY(-6px)';
                     setTimeout(() => {
                         hudNum.textContent = LBLS[top];
-                        hudNum.style.color = accents[top % accents.length];
+                        hudNum.style.color = list[top]?.accentColor || accents[top % accents.length];
                         hudNum.style.opacity = '1';
                         hudNum.style.transform = 'none';
                     }, 150);
@@ -129,15 +129,15 @@ const Projects = ({ data: { heading, list } }) => {
                     </div>
                     <div className="phud-r">
                         <div className="phud-dots" id="phud-dots">
-                            {list.map((_, i) => (
+                            {list.map((project, i) => (
                                 <div 
                                     key={i} 
                                     className={`phud-dot ${i === 0 ? 'on' : ''}`} 
-                                    style={{ backgroundColor: accents[i % accents.length] }} 
+                                    style={{ backgroundColor: project.accentColor || accents[i % accents.length] }} 
                                 />
                             ))}
                         </div>
-                        <div className="phud-num" id="phud-num" style={{ color: accents[0] }}>
+                        <div className="phud-num" id="phud-num" style={{ color: list[0]?.accentColor || accents[0] }}>
                             01 / 0{list.length}
                         </div>
                     </div>
@@ -149,7 +149,7 @@ const Projects = ({ data: { heading, list } }) => {
                             key={i} 
                             className="pcard" 
                             id={`pc${i}`} 
-                            style={{ backgroundColor: colors[i % colors.length] }}
+                            style={{ backgroundColor: project.bgColor || colors[i % colors.length] }}
                         >
                             <div className="cwm">0{i + 1}</div>
                             <div className="pcl">
@@ -159,8 +159,17 @@ const Projects = ({ data: { heading, list } }) => {
                                     <div className="pc-type">{project.label}</div>
                                     <p className="pc-one">{project.description}</p>
                                 </div>
-                                <div className="pc-img-wrap">
-                                    <img src={project.image} alt={project.title} className="pc-img" loading="lazy" />
+                                <div className="pc-img-wrap" style={{ backgroundColor: 'transparent' }}>
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title} 
+                                        className="pc-img" 
+                                        loading="lazy" 
+                                        style={{ 
+                                            objectFit: project.imageFit || 'cover', 
+                                            objectPosition: project.imagePosition || 'top' 
+                                        }}
+                                    />
                                 </div>
                                 {project.link && (
                                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="pc-link-btn">
