@@ -82,7 +82,13 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, lo
                     )}
                     <div className={`mk-header-menu ${menuVisibled && 'mk-header-menu-visible'}`}>
                         <Hamburger className="mk-hamburger-icon" onClick={onChangeMenu} width={30} height={30} />
-                        <HamburgerBody menus={menus} handleItemSelect={handleItemSelect} />
+                        <HamburgerBody 
+                            menus={menus} 
+                            handleItemSelect={(menu, idx) => {
+                                handleItemSelect(menu, idx);
+                                handleVisibleMenu(false);
+                            }} 
+                        />
                     </div>
                 </div>
             </div>
