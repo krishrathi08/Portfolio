@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import MK from '../SVGs/MK'
+import KR from '../SVGs/KR'
 import Hamburger from '../SVGs/Hamburger'
 import CurvedText from '../CurvedText';
 
@@ -27,31 +27,31 @@ const HamburgerBody = ({ menus, handleItemSelect }) => (
                         key={menu.title}
                         className='flex-center'
                     >
+                    <div
+                        style={{
+                            width: cbHeight(i + 1),
+                            height: cbHeight(i + 1),
+                            zIndex: menus.length - i,
+                        }}
+                        onClick={() => handleItemSelect(menu, i)}
+                        className='mk-hamburger-item'
+                    >
                         <div
+                            className='mk-hamburger-item-bg'
                             style={{
-                                width: cbHeight(i + 1),
-                                height: cbHeight(i + 1),
-                                zIndex: menus.length - i,
+                                opacity: getMenuItemOpacity({ menus, i })
                             }}
-                            onClick={() => handleItemSelect(menu, i)}
-                            className='mk-hamburger-item'
-                        >
-                            <div
-                                className='mk-hamburger-item-bg'
-                                style={{
-                                    opacity: getMenuItemOpacity({ menus, i })
-                                }}
-                            />
-                            <CurvedText
-                                radius={cbHeight(i + 1) / 2}
-                                text={menu.title || ''}
-                            />
-                        </div>
+                        />
+                        <CurvedText
+                            radius={cbHeight(i + 1) / 2}
+                            text={menu.title || ''}
+                        />
                     </div>
-                )
-            })}
-        </div>
+                </div>
+            )
+        })}
     </div>
+</div>
 )
 
 const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, logo } }) => {
@@ -65,7 +65,7 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, lo
             <div className='mk-header-container'>
                 <div>
                     {!logo?.src ? (
-                        <MK onClick={handleIconClick} width={45} height={45} />
+                        <KR onClick={handleIconClick} width={45} height={45} />
                     ) : (
                         <div onClick={handleIconClick} className='mk-logo-bg'>
                             <img width={60} height={60} src={logo.src} alt={logo.alt} />
