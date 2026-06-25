@@ -12,8 +12,8 @@ const header = {
         { title: 'Contact', id: 'contact' },
     ],
     rightBtn: {
-        label: 'Curriculum Vitae | CV',
-        onClick: () => openLink('assets/cv (2).pdf')
+        label: 'Resume',
+        onClick: () => openLink('assets/Krish_Rathi_Resume_Android_Kotlin.pdf')
     },
     logo: {
         src: '/assets/photo-logo.jpg',
