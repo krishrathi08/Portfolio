@@ -2,6 +2,38 @@ const projects = {
     heading: `Things I've Worked on`,
     list: [
         {
+            image: '/assets/projects/meditation_mind.png',
+            label: 'Featured Project',
+            title: 'Meditation Mind – Mindfulness & Wellness App',
+            bgColor: '#9FD6C5',
+            accentColor: '#004D40',
+            imageFit: 'cover',
+            imagePosition: 'center',
+            description: 'Meditation Mind is a modern, premium Android mindfulness and wellness application designed to help users achieve mental clarity, track health metrics, and stream soothing relaxation tracks. Built with modern Android development practices, the application features an elegant declarative UI, offline-first capabilities, secure biometric logs, and custom wellness tracking modules.',
+            whatItDoes: 'The mission of Meditation Mind is to make mental wellness and daily reflection accessible and structured. The app offers a seamless high-fidelity audio experience, visual streak tracking via custom wellness calendars, and personal log security, enabling users to build sustainable mindfulness habits.',
+            features: [
+                'Seamless audio streaming powered by Media3 ExoPlayer for focus and relaxation tracks.',
+                'Custom Wellness Calendars tracking daily meditation streaks and reflection logs.',
+                'Integrated Period & Cycle tracking for holistic health and wellness monitoring.',
+                'Secure biometric and PIN authentication layers protecting sensitive personal tracking data.',
+                'Dynamic daily reminders scheduled via background WorkManager and AlarmManager.',
+                'Elegant premium dark mode dashboard featuring smooth carousel micro-animations.'
+            ],
+            techs: [
+                'Kotlin',
+                'Jetpack Compose',
+                'Mavericks (MvRx)',
+                'Room DB',
+                'Media3 ExoPlayer',
+                'WorkManager & AlarmManager',
+                'Firebase Core & Auth',
+                'Retrofit & OkHttp',
+                'Coil'
+            ],
+            link: 'https://github.com/krishrathi08/Meditation-Mind',
+            whyItMatters: 'Meditation Mind solves the fragmentation in personal wellness apps by merging clinical-grade streak tracking, high-performance offline media playback, and hardware-secured log privacy into a single, beautiful mobile dashboard. By utilizing modern state-management and declarative layouts, it delivers an extremely responsive, distraction-free user experience.'
+        },
+        {
             image: '/assets/projects/gooddeed.png',
             label: 'Featured Project',
             title: 'GoodDeed – Community Volunteering Platform',
